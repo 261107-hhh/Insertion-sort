@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class insertionSorting {
+	public static int[] insertElement() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("insert size of array: ");
+		int n = sc.nextInt();
+		int []arr = new int[n];
+		System.out.println("insert Element: ");
+		for(int i=0; i<n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		return arr;
+	}
+	
+	public static void insertionSort(int a[]) {
+		Scanner sc = new Scanner(System.in);
+		int n = a.length;
+		for (int i=1; i<n; i++) {
+			int j = i-1;
+			int temp = a[i];
+			int ind = i;
+			while(j >= 0) {
+				if(a[j] > temp) {
+					a[ind] = a[j];
+					a[j]= temp;
+				}
+				ind--;
+				j--;
+			}
+			
+		}
+		for(int k =0; k<n;k++) {
+			System.out.print(a[k]+" ");
+		}
+		
+	}
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int t =s.nextInt();
+		int a[] = insertElement();
+		insertionSort(a);
+			
+	}
+}
